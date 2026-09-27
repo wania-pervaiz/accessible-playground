@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  max-width: 680px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  background: #F3F5EE;
+  color: #2C3E2D;
+  line-height: 1.5;
+}
+
+h1 {
+  color: #3A5A40;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #588157;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #E2E8DF;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+section {
+  background: white;
+  border: 1px solid #E2E8DF;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px -8px rgba(44, 62, 45, 0.15);
+}
+
+/* Consistent focus ring across every interactive element in the playground —
+   visible, high-contrast, and never removed. This is what you're watching
+   for during keyboard-only testing. */
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #588157;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Open Modal button --- */
+section button {
+  background: linear-gradient(135deg, #6B9A6C, #3A5A40);
+  color: white;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+section button:hover {
+  filter: brightness(1.08);
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 62, 45, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.modal-dialog {
+  background: white;
+  border-radius: 18px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px -15px rgba(44, 62, 45, 0.4);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.modal-header h2 {
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #3A5A40;
+}
+.modal-close-btn {
+  background: #F0F4EC;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #6A7B68;
+}
+.modal-close-btn:hover {
+  background: #E2E8DF;
+}
+.modal-body label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4A5D4E;
+  margin: 1rem 0 0.3rem;
+}
+.modal-body input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #D5DDD1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.modal-body button {
+  margin-top: 1.25rem;
+  background: linear-gradient(135deg, #6B9A6C, #3A5A40);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- Tabs --- */
+.tablist {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid #E2E8DF;
+  margin-bottom: 1rem;
+}
+.tab {
+  padding: 0.6rem 1.1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6A7B68;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s;
+}
+.tab:hover {
+  color: #3A5A40;
+}
+.tab-active {
+  color: #3A5A40;
+  font-weight: 700;
+  border-bottom-color: #588157;
+}
+.tabpanel {
+  padding: 0.5rem 0.25rem;
+  color: #4A5D4E;
+  font-size: 0.92rem;
+}
+
+/* --- Disclosure --- */
+.disclosure-heading {
+  margin: 0;
+}
+.disclosure-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: none;
+  background: #FAFBF7;
+  border: 1px solid #EBEFE8;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #3A5A40;
+  width: 100%;
+  text-align: left;
+}
+.disclosure-trigger:hover {
+  background: #F0F4EC;
+}
+.disclosure-icon {
+  display: inline-block;
+  transition: transform 0.15s;
+  color: #588157;
+}
+.disclosure-icon-open {
+  transform: rotate(90deg);
+}
+.disclosure-panel {
+  padding: 0.9rem 1rem 0.2rem;
+  color: #6A7B68;
+  font-size: 0.9rem;
+}
